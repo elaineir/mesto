@@ -1,0 +1,29 @@
+.root {
+  font-family: Inter, Arial, sans-serif;
+  background-color: #000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.header {
+  max-width: 880px;
+  min-width: 320px;
+  min-height: 56px;
+  padding-top: 45px;
+  border-bottom: 1px solid #545454;
+}
+
+.header::before {
+  content: "";
+  background-image: url(./images/logo-header.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  max-width: 142px;
+  min-height: 33px;
+  margin-bottom: 40px;
+}
