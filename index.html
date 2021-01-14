@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,84 @@
   <link rel="stylesheet" href="./pages/index.css">
   <title>Место</title>
 </head>
+
 <body class="root">
   <header class="header container"></header>
 
   <main class="content">
-    <section class="profile container">
-      <div class="profile__user-profile">
-        <img class="profile__avatar" src="./images/avatar-image.png" alt="Ваш аватар">
-        <div class="profile__info">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <button class="profile__edit-btn"></button>
-          <p class="profile__description">Исследователь океана</p>
-        </div>
+    <section class="profile tablet-wrapper container">
+      <img class="profile__avatar" src="./images/avatar-image.png" alt="Ваш аватар">
+      <div class="profile__user-info">
+        <h1 class="profile__name">Жак-Ив Кусто</h1>
+        <button class="profile__edit-btn"></button>
+        <p class="profile__description">Исследователь океана</p>
       </div>
       <button class="profile__add-btn"></button>
     </section>
+
+    <section class="cards tablet-wrapper container">
+      <ul class="cards__list">
+        <li>
+          <figure class="cards__item">
+            <img class="cards__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="">
+            <figcaption class="cards__caption">
+              <h2 class="cards__heading">Карачаевск</h2>
+              <button class="cards__like-btn"></button>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="cards__item">
+            <img class="cards__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="">
+            <figcaption class="cards__caption">
+              <h2 class="cards__heading">Карачаевск</h2>
+              <button class="cards__like-btn"></button>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="cards__item">
+            <img class="cards__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="">
+            <figcaption class="cards__caption">
+              <h2 class="cards__heading">Карачаевск</h2>
+              <button class="cards__like-btn"></button>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="cards__item">
+            <img class="cards__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="">
+            <figcaption class="cards__caption">
+              <h2 class="cards__heading">Карачаевск</h2>
+              <button class="cards__like-btn"></button>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="cards__item">
+            <img class="cards__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="">
+            <figcaption class="cards__caption">
+              <h2 class="cards__heading">Карачаевск</h2>
+              <button class="cards__like-btn"></button>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="cards__item">
+            <img class="cards__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="">
+            <figcaption class="cards__caption">
+              <h2 class="cards__heading">Карачаевск</h2>
+              <button class="cards__like-btn"></button>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
   </main>
 
-  <footer>
-
+  <footer class="footer tablet-wrapper container">
+    <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
   </footer>
 </body>
+
 </html>
