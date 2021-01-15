@@ -86,6 +86,28 @@
   <footer class="footer tablet-wrapper container">
     <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
   </footer>
+
+  <section class="popup popup-open">
+    <div class="popup__container">
+      <button class="popup__toggle-btn"></button>
+      <form class="form">
+        <h2 class="form__heading">Редактировать профиль</h2>
+        <fieldset class="form__input-container">
+          <label class="form__label-heading">
+            <input class="form__input form__input_el_heading" 
+              type="text" name="heading" placeholder="Жак-Ив Кусто">
+          </label>
+          <label class="form__label-subheading">
+            <input class="form__input form__input_el_subheading" 
+              type="text" name="subheading" placeholder="Исследователь океана">
+          </label>
+        </fieldset>
+        <fieldset class="form__handlers">
+          <button class="form__submit-btn" type="submit">Сохранить</button>
+        </fieldset>
+      </form>
+    </div>
+  </section>
 </body>
 
 </html>
