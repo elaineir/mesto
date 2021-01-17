@@ -16,8 +16,10 @@
     <section class="profile tablet-wrapper container">
       <img class="profile__avatar" src="./images/avatar-image.png" alt="Ваш аватар">
       <div class="profile__user-info">
-        <h1 class="profile__name">Жак-Ив Кусто</h1>
-        <button class="profile__edit-btn"></button>
+        <div class="profile__heading">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button class="profile__edit-btn" type="button"></button>
+        </div>
         <p class="profile__description">Исследователь океана</p>
       </div>
       <button class="profile__add-btn"></button>
@@ -27,55 +29,55 @@
       <ul class="cards__list">
         <li>
           <figure class="cards__item">
-            <img class="cards__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="">
+            <img class="cards__image" src="./images/cards-baikal.jpg" alt="Чайки на мысе озера Байкал">
             <figcaption class="cards__caption">
-              <h2 class="cards__heading">Карачаевск</h2>
-              <button class="cards__like-btn"></button>
+              <h2 class="cards__heading">Байкал</h2>
+              <button class="cards__like-btn" type="button"></button>
             </figcaption>
           </figure>
         </li>
         <li>
           <figure class="cards__item">
-            <img class="cards__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="">
+            <img class="cards__image" src="./images/cards-hersones.jpg" alt="Руины Херсонеса">
             <figcaption class="cards__caption">
-              <h2 class="cards__heading">Карачаевск</h2>
-              <button class="cards__like-btn"></button>
+              <h2 class="cards__heading">Херсонес</h2>
+              <button class="cards__like-btn" type="button"></button>
             </figcaption>
           </figure>
         </li>
         <li>
           <figure class="cards__item">
-            <img class="cards__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="">
+            <img class="cards__image" src="./images/cards-karelia.jpg" alt="Закат в заснеженной Карелии">
             <figcaption class="cards__caption">
-              <h2 class="cards__heading">Карачаевск</h2>
-              <button class="cards__like-btn"></button>
+              <h2 class="cards__heading">Карелия</h2>
+              <button class="cards__like-btn" type="button"></button>
             </figcaption>
           </figure>
         </li>
         <li>
           <figure class="cards__item">
-            <img class="cards__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="">
+            <img class="cards__image" src="./images/cards-kamchatka.jpg" alt="Вулкан Камчатки">
             <figcaption class="cards__caption">
-              <h2 class="cards__heading">Карачаевск</h2>
-              <button class="cards__like-btn"></button>
+              <h2 class="cards__heading">Камчатка</h2>
+              <button class="cards__like-btn" type="button"></button>
             </figcaption>
           </figure>
         </li>
         <li>
           <figure class="cards__item">
-            <img class="cards__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="">
+            <img class="cards__image" src="./images/cards-olkhon-island.jpg" alt="Лёд у острова Ольхон">
             <figcaption class="cards__caption">
-              <h2 class="cards__heading">Карачаевск</h2>
-              <button class="cards__like-btn"></button>
+              <h2 class="cards__heading">Остров Ольхон, Байкал</h2>
+              <button class="cards__like-btn" type="button"></button>
             </figcaption>
           </figure>
         </li>
         <li>
           <figure class="cards__item">
-            <img class="cards__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="">
+            <img class="cards__image" src="./images/cards-vyborg.jpg" alt="Смотровая башня">
             <figcaption class="cards__caption">
-              <h2 class="cards__heading">Карачаевск</h2>
-              <button class="cards__like-btn"></button>
+              <h2 class="cards__heading">Выборг</h2>
+              <button class="cards__like-btn" type="button"></button>
             </figcaption>
           </figure>
         </li>
@@ -87,27 +89,28 @@
     <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
   </footer>
 
-  <section class="popup popup-open">
+  <section class="popup">
     <div class="popup__container">
-      <button class="popup__toggle-btn"></button>
+      <button class="popup__toggle-btn" type="button"></button>
       <form class="form">
         <h2 class="form__heading">Редактировать профиль</h2>
         <fieldset class="form__input-container">
           <label class="form__label-heading">
             <input class="form__input form__input_el_heading" 
-              type="text" name="heading" placeholder="Жак-Ив Кусто">
+              type="text" name="heading">
           </label>
           <label class="form__label-subheading">
             <input class="form__input form__input_el_subheading" 
-              type="text" name="subheading" placeholder="Исследователь океана">
+              type="text" name="subheading">
           </label>
         </fieldset>
         <fieldset class="form__handlers">
-          <button class="form__submit-btn" type="submit">Сохранить</button>
+          <button class="form__submit-btn">Сохранить</button>
         </fieldset>
       </form>
     </div>
   </section>
+  <script src="./popup.js"></script>
 </body>
 
 </html>
