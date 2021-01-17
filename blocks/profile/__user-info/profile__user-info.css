@@ -1,0 +1,9 @@
+.profile__user-info {
+  max-width: 550px;
+}
+
+@media screen and (max-width: 623px) {
+  .profile__user-info {
+    text-align: center;
+  }
+}

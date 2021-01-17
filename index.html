@@ -27,7 +27,7 @@
 
     <section class="cards tablet-wrapper container">
       <ul class="cards__list">
-        <li>
+        <li class="cards__list-item">
           <figure class="cards__item">
             <img class="cards__image" src="./images/cards-baikal.jpg" alt="Чайки на мысе озера Байкал">
             <figcaption class="cards__caption">
@@ -36,7 +36,7 @@
             </figcaption>
           </figure>
         </li>
-        <li>
+        <li class="cards__list-item">
           <figure class="cards__item">
             <img class="cards__image" src="./images/cards-hersones.jpg" alt="Руины Херсонеса">
             <figcaption class="cards__caption">
@@ -45,7 +45,7 @@
             </figcaption>
           </figure>
         </li>
-        <li>
+        <li class="cards__list-item">
           <figure class="cards__item">
             <img class="cards__image" src="./images/cards-karelia.jpg" alt="Закат в заснеженной Карелии">
             <figcaption class="cards__caption">
@@ -54,7 +54,7 @@
             </figcaption>
           </figure>
         </li>
-        <li>
+        <li class="cards__list-item">
           <figure class="cards__item">
             <img class="cards__image" src="./images/cards-kamchatka.jpg" alt="Вулкан Камчатки">
             <figcaption class="cards__caption">
@@ -63,7 +63,7 @@
             </figcaption>
           </figure>
         </li>
-        <li>
+        <li class="cards__list-item">
           <figure class="cards__item">
             <img class="cards__image" src="./images/cards-olkhon-island.jpg" alt="Лёд у острова Ольхон">
             <figcaption class="cards__caption">
@@ -72,7 +72,7 @@
             </figcaption>
           </figure>
         </li>
-        <li>
+        <li class="cards__list-item">
           <figure class="cards__item">
             <img class="cards__image" src="./images/cards-vyborg.jpg" alt="Смотровая башня">
             <figcaption class="cards__caption">
@@ -89,19 +89,17 @@
     <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
   </footer>
 
-  <section class="popup">
+  <div class="popup">
     <div class="popup__container">
       <button class="popup__toggle-btn" type="button"></button>
       <form class="form">
         <h2 class="form__heading">Редактировать профиль</h2>
         <fieldset class="form__input-container">
-          <label class="form__label-heading">
-            <input class="form__input form__input_el_heading" 
-              type="text" name="heading">
+          <label class="form__label">
+            <input class="form__input form__input_el_heading" type="text" name="heading">
           </label>
-          <label class="form__label-subheading">
-            <input class="form__input form__input_el_subheading" 
-              type="text" name="subheading">
+          <label class="form__label">
+            <input class="form__input form__input_el_subheading" type="text" name="subheading">
           </label>
         </fieldset>
         <fieldset class="form__handlers">
@@ -109,8 +107,8 @@
         </fieldset>
       </form>
     </div>
-  </section>
-  <script src="./popup.js"></script>
+  </div>
+  <script src="./js/popup.js"></script>
 </body>
 
 </html>

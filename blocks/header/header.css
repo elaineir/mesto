@@ -1,0 +1,38 @@
+.header {
+  max-width: 880px;
+  min-width: 242px;
+  padding-top: 45px;
+  min-height: 73px;
+  border-bottom: 1px solid #54545470;
+}
+
+@media screen and (max-width: 623px) {
+  .header {
+    padding-top: 28px;
+    min-height: 55px;
+  }
+}
+
+.header::before {
+  content: "";
+  background-image: url(../../images/logo-header.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  max-width: 142px;
+  min-height: 33px;
+}
+
+@media screen and (max-width: 938px) {
+  .header::before {
+    position: relative;
+    left: 27px;
+  }
+}
+
+@media screen and (max-width: 623px) {
+  .header::before {
+    max-width: 104px;
+    min-height: 24px;
+  }
+}
