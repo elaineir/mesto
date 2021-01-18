@@ -1,4 +1,4 @@
-.cards__like-btn {
+.card__like-btn {
   background-image: url(../../../images/icon-heart_transparent.svg);
   background-color: transparent;
   background-size: contain;
@@ -11,15 +11,15 @@
   padding: 0;
 }
 
-.cards__like-btn:hover {
+.card__like-btn:hover {
   opacity: .5;
   cursor: pointer;
 }
 
-.cards__like-btn:focus {
+.card__like-btn:focus {
   outline: none;
 }
 
-.cards__like-btn:active {
+.card__like-btn:active {
   background-image: url(../../../images/icon-heart_black.svg);
 }

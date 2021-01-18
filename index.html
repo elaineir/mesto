@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,106 +9,91 @@
   <title>Место</title>
 </head>
 
-<body class="root">
-  <header class="header container"></header>
+<body>
+  <div class="page">
+    <header class="header">
+      <a class="header__logo" aria-label="Логотип Место" href="#" target="_self"></a>
+    </header>
 
-  <main class="content tablet-wrapper container">
-    <section class="profile">
-      <img class="profile__avatar" src="./images/avatar-image.png" alt="Ваш аватар">
-      <div class="profile__user-info">
-        <div class="profile__heading">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <button class="profile__edit-btn" type="button"></button>
+    <main class="content">
+      <section class="profile">
+        <img class="profile__avatar" src="./images/avatar-image.png" alt="Ваш аватар">
+        <div class="profile__user-info">
+          <div class="profile__heading">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button class="profile__edit-btn" aria-label="Редактировать" type="button"></button>
+          </div>
+          <p class="profile__description">Исследователь океана</p>
         </div>
-        <p class="profile__description">Исследователь океана</p>
-      </div>
-      <button class="profile__add-btn"></button>
-    </section>
+        <button class="profile__add-btn" aria-label="Добавить" type="button"></button>
+      </section>
 
-    <section class="cards">
-      <ul class="cards__list">
-        <li class="cards__list-item">
-          <figure class="cards__item">
-            <img class="cards__image" src="./images/cards-baikal.jpg" alt="Чайки на мысе озера Байкал">
-            <figcaption class="cards__caption">
-              <h2 class="cards__heading">Байкал</h2>
-              <button class="cards__like-btn" type="button"></button>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="cards__list-item">
-          <figure class="cards__item">
-            <img class="cards__image" src="./images/cards-hersones.jpg" alt="Руины Херсонеса">
-            <figcaption class="cards__caption">
-              <h2 class="cards__heading">Херсонес</h2>
-              <button class="cards__like-btn" type="button"></button>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="cards__list-item">
-          <figure class="cards__item">
-            <img class="cards__image" src="./images/cards-karelia.jpg" alt="Закат в заснеженной Карелии">
-            <figcaption class="cards__caption">
-              <h2 class="cards__heading">Карелия</h2>
-              <button class="cards__like-btn" type="button"></button>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="cards__list-item">
-          <figure class="cards__item">
-            <img class="cards__image" src="./images/cards-kamchatka.jpg" alt="Вулкан Камчатки">
-            <figcaption class="cards__caption">
-              <h2 class="cards__heading">Камчатка</h2>
-              <button class="cards__like-btn" type="button"></button>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="cards__list-item">
-          <figure class="cards__item">
-            <img class="cards__image" src="./images/cards-olkhon-island.jpg" alt="Лёд у острова Ольхон">
-            <figcaption class="cards__caption">
-              <h2 class="cards__heading">Остров Ольхон, Байкал</h2>
-              <button class="cards__like-btn" type="button"></button>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="cards__list-item">
-          <figure class="cards__item">
-            <img class="cards__image" src="./images/cards-vyborg.jpg" alt="Смотровая башня">
-            <figcaption class="cards__caption">
-              <h2 class="cards__heading">Выборг</h2>
-              <button class="cards__like-btn" type="button"></button>
-            </figcaption>
-          </figure>
-        </li>
-      </ul>
-    </section>
-  </main>
+      <section class="cards">
+        <ul class="cards__list">
+          <li class="card">
+            <img class="card__image" src="./images/cards-baikal.jpg" alt="Чайки на мысе озера Байкал">
+            <div class="card__caption">
+              <h2 class="card__heading">Байкал</h2>
+              <button class="card__like-btn" aria-label="Нравится" type="button"></button>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card__image" src="./images/cards-hersones.jpg" alt="Руины Херсонеса">
+            <div class="card__caption">
+              <h2 class="card__heading">Херсонес</h2>
+              <button class="card__like-btn" aria-label="Нравится" type="button"></button>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card__image" src="./images/cards-karelia.jpg" alt="Закат в заснеженной Карелии">
+            <div class="card__caption">
+              <h2 class="card__heading">Карелия</h2>
+              <button class="card__like-btn" aria-label="Нравится" type="button"></button>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card__image" src="./images/cards-kamchatka.jpg" alt="Вулкан Камчатки">
+            <div class="card__caption">
+              <h2 class="card__heading">Камчатка</h2>
+              <button class="card__like-btn" aria-label="Нравится" type="button"></button>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card__image" src="./images/cards-olkhon-island.jpg" alt="Лёд у острова Ольхон">
+            <div class="card__caption">
+              <h2 class="card__heading">Остров Ольхон, Байкал</h2>
+              <button class="card__like-btn" aria-label="Нравится" type="button"></button>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card__image" src="./images/cards-vyborg.jpg" alt="Смотровая башня">
+            <div class="card__caption">
+              <h2 class="card__heading">Выборг</h2>
+              <button class="card__like-btn" aria-label="Нравится" type="button"></button>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
 
-  <footer class="footer tablet-wrapper container">
-    <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
-  </footer>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
+    </footer>
 
-  <div class="popup">
-    <div class="popup__container">
-      <button class="popup__toggle-btn" type="button"></button>
-      <form class="form">
-        <h2 class="form__heading">Редактировать профиль</h2>
-        <fieldset class="form__input-container">
-          <label class="form__label">
+    <article class="popup">
+      <div class="popup__container">
+        <button class="popup__close-btn" type="button"></button>
+        <form class="form" name="editProfileForm">
+          <h2 class="form__heading">Редактировать профиль</h2>
+          <fieldset class="form__input-container">
             <input class="form__input form__input_el_heading" type="text" name="heading">
-          </label>
-          <label class="form__label">
             <input class="form__input form__input_el_subheading" type="text" name="subheading">
-          </label>
-        </fieldset>
-        <fieldset class="form__handlers">
-          <button class="form__submit-btn">Сохранить</button>
-        </fieldset>
-      </form>
-    </div>
+          </fieldset>
+          <button class="form__submit-btn" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </article>
+    <script src="./js/popup.js"></script>
   </div>
-  <script src="./js/popup.js"></script>
 </body>
-
 </html>

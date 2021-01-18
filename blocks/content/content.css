@@ -1,4 +1,6 @@
-.content {
-  max-width: 880px;
-  min-width: 242px;
+@media screen and (max-width: 938px) {
+  .content {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
 }

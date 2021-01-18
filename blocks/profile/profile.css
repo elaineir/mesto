@@ -1,4 +1,6 @@
 .profile {
+  max-width: 880px;
+  min-width: 242px;
   display: grid;
   align-items: center;
   grid-template-columns: 120px minmax(336px, 1fr) minmax(50px, 150px);
@@ -6,6 +8,7 @@
   padding-top: 40px;
   padding-bottom: 50px;
   color: #fff;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 623px) {

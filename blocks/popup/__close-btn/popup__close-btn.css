@@ -1,4 +1,4 @@
-.popup__toggle-btn {
+.popup__close-btn {
   box-sizing: border-box;
   background-image: url(../../../images/icon-plus.svg);
   background-color: transparent;
@@ -12,20 +12,21 @@
   height: 40px;
   top: -20px;
   right: -20px;
+  padding: 0;
   transition: opacity .3s linear;
 }
 
-.popup__toggle-btn:hover {
+.popup__close-btn:hover {
   opacity: .6;
   cursor: pointer;
 }
 
-.popup__toggle-btn:focus {
+.popup__close-btn:focus {
   outline: none;
 }
 
 @media screen and (max-width: 623px) {
-  .popup__toggle-btn {
+  .popup__close-btn {
     width: 26px;
     height: 26px;
     top: -23px;

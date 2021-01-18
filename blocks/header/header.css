@@ -4,35 +4,12 @@
   padding-top: 45px;
   min-height: 73px;
   border-bottom: 1px solid rgba(54, 54, 54, .7);
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 623px) {
   .header {
     padding-top: 28px;
     min-height: 55px;
-  }
-}
-
-.header::before {
-  content: "";
-  background-image: url(../../images/logo-header.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  display: block;
-  max-width: 142px;
-  min-height: 33px;
-  transition: transform .5s linear;
-}
-
-@media screen and (max-width: 938px) {
-  .header::before {
-    transform: translateX(27px);
-  }
-}
-
-@media screen and (max-width: 623px) {
-  .header::before {
-    max-width: 104px;
-    min-height: 24px;
   }
 }

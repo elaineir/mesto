@@ -1,5 +1,5 @@
-.cards__heading {
-  max-width: calc(100% - 22px);
+.card__heading {
+  max-width: calc(100% - 52px);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
