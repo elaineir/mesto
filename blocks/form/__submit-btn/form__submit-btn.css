@@ -3,11 +3,11 @@
   height: 50px;
   background-color: #000;
   color: #fff;
-  font-size: 18px;
-  line-height: 1.22;
   border: none;
   border-radius: 2px;
   transition: opacity .3s linear;
+  font-size: 18px;
+  line-height: 1.22;
   padding: 0;
 }
 
@@ -20,6 +20,5 @@
   .form__submit-btn {
     height: 46px;
     font-size: 14px;
-    line-height: 1.21;
   }
 }

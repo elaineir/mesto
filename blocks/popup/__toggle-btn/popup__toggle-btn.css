@@ -5,11 +5,11 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
   border: none;
   transform: rotate(45deg);
   position: absolute;
+  width: 40px;
+  height: 40px;
   top: -20px;
   right: -20px;
   transition: opacity .3s linear;

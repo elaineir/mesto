@@ -3,7 +3,7 @@
   min-width: 242px;
   padding-top: 45px;
   min-height: 73px;
-  border-bottom: 1px solid #54545470;
+  border-bottom: 1px solid rgba(54, 54, 54, .7);
 }
 
 @media screen and (max-width: 623px) {
@@ -21,12 +21,12 @@
   display: block;
   max-width: 142px;
   min-height: 33px;
+  transition: transform .5s linear;
 }
 
 @media screen and (max-width: 938px) {
   .header::before {
-    position: relative;
-    left: 27px;
+    transform: translateX(27px);
   }
 }
 
