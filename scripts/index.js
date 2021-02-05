@@ -1,3 +1,5 @@
+'use strict';
+
 const INITIAL_CARDS = [
   {
     name: 'Выборг',
@@ -24,6 +26,7 @@ const INITIAL_CARDS = [
     link: 'https://live.staticflickr.com/65535/50907270048_87735fa432_o.jpg'
   }
 ];
+
 //профиль
 const profileEditButton = document.querySelector('.button_edit');
 const profileAddButton = document.querySelector('.button_add');
