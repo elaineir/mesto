@@ -38,9 +38,10 @@ const cardTemplate = document.querySelector('.template-card').content;
 const popup = document.querySelector('.popup');
 const popupContainer = popup.querySelector('.popup__container');
 const popupCloseBtn = popup.querySelector('.button_close');
+const popupPhotoContainer = popup.querySelector('.popup__photo-container');
 
 //формы
-const form = document.querySelectorAll('.form');
+const forms = document.querySelectorAll('.form');
 const profileForm = document.querySelector('form[name="profileForm"]');
 const profileNameInput = document.querySelector('.form__input_el_heading');
 const profileDescInput = document.querySelector('.form__input_el_subheading');
@@ -49,23 +50,24 @@ const cardNameInput = document.querySelector('.form__input_el_image-caption');
 const cardLinkInput = document.querySelector('.form__input_el_image-link');
 
 //развернутое фото
-const photo = document.querySelector('.photo');
-const photoPic = photo.querySelector('.photo__pic');
-const photoCaption = photo.querySelector('.photo__caption');
+const photoPic = popupPhotoContainer.querySelector('.photo__pic');
+const photoCaption = popupPhotoContainer.querySelector('.photo__caption');
 
 const openPopup = () => popup.classList.add('popup_opened');
 
 const closePopup = () => {
   popup.classList.remove('popup_opened');
-  form.forEach(item => {
-    if (item.classList.contains('form_active')) item.classList.remove('form_active')
+  forms.forEach(form => {
+    if (form.classList.contains('form_active')) {
+      form.classList.remove('form_active');
+    }
   });
 
-  if (popupContainer.classList.contains('popup__container_size_big')) {
-    popupContainer.classList.remove('popup__container_size_big');
-    photo.classList.remove('photo_active');
+  if (popupPhotoContainer.classList.contains('popup__photo-container_active')) {
+    popupPhotoContainer.classList.remove('popup__photo-container_active');
+    popup.classList.remove('popup_full-view');
   }
-};  
+};
 
 const openProfileForm = () => {
   profileForm.classList.add('form_active');
@@ -101,24 +103,34 @@ const createCard = (name, link) => {
 
   const cardPreview = cardElement.querySelector('.card__preview');
   cardPreview.style.backgroundImage = `url(${link})`;
-  cardPreview.addEventListener('click', function() {
+  cardPreview.addEventListener('click', handleFullView);
+  
+  function handleFullView() {
     photoPic.src = link;
+    photoPic.alt = name;
     photoCaption.textContent = name;
-    photo.classList.add('photo_active');
-    popupContainer.classList.add('popup__container_size_big');
+    popupPhotoContainer.classList.add('popup__photo-container_active');
+    popup.classList.add('popup_full-view');
     openPopup();
-  });
+  }
 
   const likeButton = cardElement.querySelector('.button_like_empty');
-  likeButton.addEventListener('click', function(evt) {
+  likeButton.addEventListener('click', handleLike);
+  
+  function handleLike(evt) {
     evt.target.classList.toggle('button_like_liked');
-  });
+  }
 
   const deleteButton = cardElement.querySelector('.button_delete');
-  deleteButton.addEventListener('click', function() {
+  deleteButton.addEventListener('click', handleDelete);
+  
+  function handleDelete() {
     const cardItem = deleteButton.closest('.card');
     cardItem.remove();
-  });
+    cardPreview.removeEventListener('click', handleFullView);
+    likeButton.removeEventListener('click', handleLike);
+    deleteButton.removeEventListener('click', handleDelete);
+  }
 
   return cardElement;
 };
