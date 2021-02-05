@@ -1,0 +1,8 @@
+.button_delete {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  background-image: url(../../../images/icon-trash.svg);
+  width: 18px;
+  height: 19.3px;
+}

@@ -22,22 +22,22 @@
         <div class="profile__user-info">
           <div class="profile__heading">
             <h1 class="profile__name">Жанна Барре</h1>
-            <button class="profile__edit-btn" aria-label="Редактировать" type="button"></button>
+            <button class="button button_edit" aria-label="Редактировать" type="button"></button>
           </div>
           <p class="profile__description">Путешественница</p>
         </div>
-        <button class="profile__add-btn" aria-label="Добавить фото" type="button"></button>
+        <button class="button button_add" aria-label="Добавить фото" type="button"></button>
       </section>
 
       <section class="cards">
         <ul class="cards__list">
           <template class="template-card">
             <li class="card">
-              <div class="card__preview"></div>
-              <button class="card__trash-btn" aria-label="Удалить" type="button"></button>
+              <div class="card__preview" aria-label="Увеличить изображение"></div>
+              <button class="button button_delete" aria-label="Удалить" type="button"></button>
               <div class="card__caption">
                 <h2 class="card__heading"></h2>
-                <button class="card__like-btn" aria-label="Нравится" type="button"></button>
+                <button class="button button_like_empty" aria-label="Нравится" type="button"></button>
               </div>
             </li>
           </template>
@@ -51,7 +51,8 @@
 
     <article class="popup">
       <div class="popup__container">
-        <button class="popup__close-btn" aria-label="Закрыть" type="button"></button>
+        <button class="button button_close" aria-label="Закрыть" type="button"></button>
+
         <form class="form" name="profileForm">
           <h2 class="form__heading">Редактировать профиль</h2>
           <fieldset class="form__input-container">
@@ -60,6 +61,7 @@
           </fieldset>
           <button class="form__submit-btn" type="submit">Сохранить</button>
         </form>
+
         <form class="form" name="addCardForm">
           <h2 class="form__heading">Новое место</h2>
           <fieldset class="form__input-container">
@@ -70,13 +72,16 @@
           </fieldset>
           <button class="form__submit-btn" type="submit">Сохранить</button>
         </form>
-        <figure class="photo">
-          <img class="photo__pic" src="" alt="">
-          <figcaption class="photo__caption"></figcaption>
-        </figure>
+        
+        <section class="popup__full-view">
+          <figure class="photo">
+            <img class="photo__pic" src="" alt="">
+            <figcaption class="photo__caption"></figcaption>
+          </figure>
+        </section>
       </div>
     </article>
-    <script src="./scripts/index.js"></script>
   </div>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>

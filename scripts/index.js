@@ -24,21 +24,22 @@ const INITIAL_CARDS = [
     link: 'https://live.staticflickr.com/65535/50907270048_87735fa432_o.jpg'
   }
 ];
-//элементы профиля
-const profileEditButton = document.querySelector('.profile__edit-btn');
-const profileAddButton = document.querySelector('.profile__add-btn');
+//профиль
+const profileEditButton = document.querySelector('.button_edit');
+const profileAddButton = document.querySelector('.button_add');
 const profileName = document.querySelector('.profile__name');
 const profileDesc = document.querySelector('.profile__description');
 
-//элементы карточек
+//карточки
 const cardsList = document.querySelector('.cards__list');
+const cardTemplate = document.querySelector('.template-card').content;
 
-//элементы попапа
+//попап
 const popup = document.querySelector('.popup');
 const popupContainer = popup.querySelector('.popup__container');
-const popupCloseBtn = popup.querySelector('.popup__close-btn');
+const popupCloseBtn = popup.querySelector('.button_close');
 
-//элементы форм
+//формы
 const form = document.querySelectorAll('.form');
 const profileForm = document.querySelector('form[name="profileForm"]');
 const profileNameInput = document.querySelector('.form__input_el_heading');
@@ -47,7 +48,7 @@ const cardForm = document.querySelector('form[name="addCardForm"]');
 const cardNameInput = document.querySelector('.form__input_el_image-caption');
 const cardLinkInput = document.querySelector('.form__input_el_image-link');
 
-//элементы развернутого фото
+//развернутое фото
 const photo = document.querySelector('.photo');
 const photoPic = photo.querySelector('.photo__pic');
 const photoCaption = photo.querySelector('.photo__caption');
@@ -94,7 +95,6 @@ const submitCardForm = (evt) => {
 };
 
 const createCard = (name, link) => {
-  const cardTemplate = document.querySelector('.template-card').content;
   const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
 
   cardElement.querySelector('.card__heading').textContent = name;
@@ -109,19 +109,19 @@ const createCard = (name, link) => {
     openPopup();
   });
 
-  const likeButton = cardElement.querySelector('.card__like-btn');
+  const likeButton = cardElement.querySelector('.button_like_empty');
   likeButton.addEventListener('click', function(evt) {
-    evt.target.classList.toggle('card__like-btn_active');
+    evt.target.classList.toggle('button_like_liked');
   });
 
-  const deleteButton = cardElement.querySelector('.card__trash-btn');
+  const deleteButton = cardElement.querySelector('.button_delete');
   deleteButton.addEventListener('click', function() {
     const cardItem = deleteButton.closest('.card');
     cardItem.remove();
   });
 
   return cardElement;
-}
+};
 
 const renderCards = () => 
   INITIAL_CARDS.map(card => cardsList.prepend(createCard(card.name, card.link)));

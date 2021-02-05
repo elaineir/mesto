@@ -1,22 +1,19 @@
-.card__like-btn {
-  background-image: url(../../../images/icon-heart_transparent.svg);
+.button {
+  box-sizing: border-box;
   background-color: transparent;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 22px;
-  height: 19px;
   border: none;
   transition: opacity .3s linear;
   padding: 0;
 }
 
-.card__like-btn:hover {
-  opacity: .5;
+.button:hover {
+  opacity: .6;
   cursor: pointer;
 }
 
-.card__like-btn:focus {
+.button:focus {
   outline: none;
 }
-

@@ -1,0 +1,16 @@
+.button_edit {
+  display: inline-flex;
+  background-image: url(../../../images/icon-pen.svg);
+  background-size: 10px 10px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #fff;
+}
+
+@media screen and (max-width: 635px) {
+  .button_edit {
+    background-size: 7.5px 7.5px;
+    width: 18px;
+    height: 18px;
+  }
+}
