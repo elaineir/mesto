@@ -52,7 +52,7 @@ const cardForm = document.querySelector('form[name="addCardForm"]');
 const cardNameInput = document.querySelector('.form__input_el_image-caption');
 const cardLinkInput = document.querySelector('.form__input_el_image-link');
 
-//развернутое фото
+//окно просмотра фото
 const photoPic = popupPhotoContainer.querySelector('.photo__pic');
 const photoCaption = popupPhotoContainer.querySelector('.photo__caption');
 
@@ -66,12 +66,13 @@ const openPopupSmoothly = () => {
 
 const closePopup = () => {
   popup.classList.remove('popup_opened');
+  //проверяем, какая форма активна и активно ли окно просмотра
   forms.forEach(form => {
     if (form.classList.contains('form_active')) {
       form.classList.remove('form_active');
     }
   });
-
+  
   if (popupPhotoContainer.classList.contains('popup__photo-container_active')) {
     popupPhotoContainer.classList.remove('popup__photo-container_active');
     popup.classList.remove('popup_full-view');
@@ -122,7 +123,12 @@ const createCard = (name, link) => {
   cardPreview.style.backgroundImage = `url(${link})`;
   cardPreview.addEventListener('click', handleFullView);
   
-  function handleFullView() {
+  function handleFullView(evt) {
+    //убираем стандартное событие ссылки
+    //чтобы окно просмотра не скроллило страницу наверх
+    evt.preventDefault();
+    cardPreview.getAttribute('href').replace('');
+    //наполняем окно просмотра
     photoPic.src = link;
     photoPic.alt = name;
     photoCaption.textContent = name;
