@@ -58,6 +58,12 @@ const photoCaption = popupPhotoContainer.querySelector('.photo__caption');
 
 const openPopup = () => popup.classList.add('popup_opened');
 
+//добавим плавности :3
+const openPopupSmoothly = () => {
+  popup.classList.add('appear');
+  setTimeout(openPopup, 200);
+};
+
 const closePopup = () => {
   popup.classList.remove('popup_opened');
   forms.forEach(form => {
@@ -70,31 +76,39 @@ const closePopup = () => {
     popupPhotoContainer.classList.remove('popup__photo-container_active');
     popup.classList.remove('popup_full-view');
   }
+
+  popup.classList.remove('fade');
+};
+
+const closePopupSmoothly = () => {
+  popup.classList.remove('appear');
+  popup.classList.add('fade');
+  setTimeout(closePopup, 400);
 };
 
 const openProfileForm = () => {
   profileForm.classList.add('form_active');
   profileNameInput.value = profileName.textContent;
   profileDescInput.value = profileDesc.textContent;
-  openPopup();
+  openPopupSmoothly();
 };
 
 const submitProfileForm = (evt) => {
   evt.preventDefault();
   profileName.textContent = profileNameInput.value;
   profileDesc.textContent = profileDescInput.value;
-  closePopup();
+  closePopupSmoothly();
 };
 
 const openCardForm = () => {
   cardForm.classList.add('form_active');
-  openPopup();
+  openPopupSmoothly();
 };
 
 const submitCardForm = (evt) => {
   evt.preventDefault();
   cardsList.prepend(createCard(cardNameInput.value, cardLinkInput.value));
-  closePopup();
+  closePopupSmoothly();
   cardNameInput.value = '';
   cardLinkInput.value = '';
 };
@@ -114,7 +128,7 @@ const createCard = (name, link) => {
     photoCaption.textContent = name;
     popupPhotoContainer.classList.add('popup__photo-container_active');
     popup.classList.add('popup_full-view');
-    openPopup();
+    openPopupSmoothly();
   }
 
   const likeButton = cardElement.querySelector('.button_like_empty');
@@ -143,7 +157,7 @@ const renderCards = () =>
 
 profileEditButton.addEventListener('click', openProfileForm);
 profileAddButton.addEventListener('click', openCardForm);
-popupCloseBtn.addEventListener('click', closePopup);
+popupCloseBtn.addEventListener('click', closePopupSmoothly);
 profileForm.addEventListener('submit', submitProfileForm);
 cardForm.addEventListener('submit', submitCardForm);
 
