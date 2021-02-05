@@ -5,9 +5,9 @@
   margin: 0 0 44px;
 }
 
-@media screen and (max-width: 623px) {
+@media screen and (max-width: 635px) {
   .form__heading {
     font-size: 18px;
-    margin: 0 0 75px;
+    margin: 0 0 65px;
   }
 }

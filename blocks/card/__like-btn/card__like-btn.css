@@ -20,6 +20,3 @@
   outline: none;
 }
 
-.card__like-btn:active {
-  background-image: url(../../../images/icon-heart_black.svg);
-}

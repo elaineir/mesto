@@ -5,9 +5,9 @@
   margin: 0;
 }
 
-@media screen and (max-width: 623px) {
+@media screen and (max-width: 635px) {
   .footer__copyright {
-    font-size: calc(14px + 4 * ((100vw - 320px) / 303));
+    font-size: calc(14px + 4 * ((100vw - 320px) / 315));
   }
 }
 

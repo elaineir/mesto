@@ -1,0 +1,6 @@
+.photo__pic {
+  max-height: 75vh;
+  object-fit: contain;
+  object-position: center;
+  margin-bottom: 10px;
+}

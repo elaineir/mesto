@@ -9,10 +9,10 @@
   margin: 0 18px 0 0;
 }
 
-@media screen and (max-width: 623px) {
+@media screen and (max-width: 635px) {
   .profile__name {
     max-width: calc(100vw - 118px);
-    font-size: calc(27px + 15 * ((100vw - 320px) / 303));
+    font-size: calc(27px + 15 * ((100vw - 320px) / 315));
     line-height: 1.2;
     margin: 0 10px 0 0;
   }

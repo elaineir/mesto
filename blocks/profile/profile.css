@@ -11,7 +11,7 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 623px) {
+@media screen and (max-width: 635px) {
   .profile {
     justify-items: center;
     grid-template-columns: 1fr;

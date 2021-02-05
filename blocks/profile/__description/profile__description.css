@@ -4,9 +4,9 @@
   margin: 0;
 }
 
-@media screen and (max-width: 623px) {
+@media screen and (max-width: 635px) {
   .profile__description {
-    font-size: calc(14px + 4 * ((100vw - 320px) / 303));
+    font-size: calc(14px + 4 * ((100vw - 320px) / 315));
   }
 }
 

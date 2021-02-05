@@ -22,8 +22,9 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 623px) {
+@media screen and (max-width: 635px) {
   .profile__add-btn {
+    max-width: 371px;
     background-size: 16px 16px;
   }
 }
