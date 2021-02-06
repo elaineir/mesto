@@ -22,7 +22,7 @@ const INITIAL_CARDS = [
     link: 'https://live.staticflickr.com/65535/50914524227_75cd43e7e4_o.jpg'
   },
   {
-    name: 'Херсонес',
+    name: 'Херсонес, Крым, Россия',
     link: 'https://live.staticflickr.com/65535/50913704173_3d77ca98db_o.jpg'
   }
 ];
