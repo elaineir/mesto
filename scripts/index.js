@@ -2,28 +2,28 @@
 
 const INITIAL_CARDS = [
   {
-    name: 'Выборг',
-    link: 'https://live.staticflickr.com/65535/50908099792_57d59fff37_o.jpg'
+    name: 'Парк Монрепо, Выборг, Россия',
+    link: 'https://live.staticflickr.com/65535/50913703638_b4fcd03bfe_o.jpg'
   },
   {
-    name: 'Ольхон, Байкал',
-    link: 'https://live.staticflickr.com/65535/50907269318_74ff811fac_o.jpg'
+    name: 'Республика Коми, Россия',
+    link: 'https://live.staticflickr.com/65535/50914523672_b12464bd19_o.jpg'
   },
   {
-    name: 'Камчатка',
-    link: 'https://live.staticflickr.com/65535/50908099337_bc66ec9eb9_o.jpg'
+    name: 'Тулиновка, Россия',
+    link: 'https://live.staticflickr.com/65535/50914523872_6806f86d99_o.jpg'
   },
   {
-    name: 'Карелия',
-    link: 'https://live.staticflickr.com/65535/50908099827_3c3557c0a8_o.jpg'
+    name: 'Камчатка, Россия',
+    link: 'https://live.staticflickr.com/65535/50914393181_baa1575e2f_o.jpg'
+  },
+  {
+    name: 'Байкал, Россия',
+    link: 'https://live.staticflickr.com/65535/50914524227_75cd43e7e4_o.jpg'
   },
   {
     name: 'Херсонес',
-    link: 'https://live.staticflickr.com/65535/50908099447_74f4885dbd_o.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://live.staticflickr.com/65535/50907270048_87735fa432_o.jpg'
+    link: 'https://live.staticflickr.com/65535/50913704173_3d77ca98db_o.jpg'
   }
 ];
 
@@ -33,15 +33,18 @@ const profileAddButton = document.querySelector('.button_add');
 const profileName = document.querySelector('.profile__name');
 const profileDesc = document.querySelector('.profile__description');
 
+
 //карточки
 const cardsList = document.querySelector('.cards__list');
 const cardTemplate = document.querySelector('.template-card').content;
+
 
 //попап
 const popup = document.querySelector('.popup');
 const popupContainer = popup.querySelector('.popup__container');
 const popupCloseBtn = popup.querySelector('.button_close');
 const popupPhotoContainer = popup.querySelector('.popup__photo-container');
+
 
 //формы
 const forms = document.querySelectorAll('.form');
@@ -52,68 +55,13 @@ const cardForm = document.querySelector('form[name="addCardForm"]');
 const cardNameInput = document.querySelector('.form__input_el_image-caption');
 const cardLinkInput = document.querySelector('.form__input_el_image-link');
 
+
 //окно просмотра фото
 const photoPic = popupPhotoContainer.querySelector('.photo__pic');
 const photoCaption = popupPhotoContainer.querySelector('.photo__caption');
 
-const openPopup = () => popup.classList.add('popup_opened');
 
-//добавим плавности :3
-const openPopupSmoothly = () => {
-  popup.classList.add('appear');
-  setTimeout(openPopup, 200);
-};
-
-const closePopup = () => {
-  popup.classList.remove('popup_opened');
-  //проверяем, какая форма активна и активно ли окно просмотра
-  forms.forEach(form => {
-    if (form.classList.contains('form_active')) {
-      form.classList.remove('form_active');
-    }
-  });
-  
-  if (popupPhotoContainer.classList.contains('popup__photo-container_active')) {
-    popupPhotoContainer.classList.remove('popup__photo-container_active');
-    popup.classList.remove('popup_full-view');
-  }
-
-  popup.classList.remove('fade');
-};
-
-const closePopupSmoothly = () => {
-  popup.classList.remove('appear');
-  popup.classList.add('fade');
-  setTimeout(closePopup, 400);
-};
-
-const openProfileForm = () => {
-  profileForm.classList.add('form_active');
-  profileNameInput.value = profileName.textContent;
-  profileDescInput.value = profileDesc.textContent;
-  openPopupSmoothly();
-};
-
-const submitProfileForm = (evt) => {
-  evt.preventDefault();
-  profileName.textContent = profileNameInput.value;
-  profileDesc.textContent = profileDescInput.value;
-  closePopupSmoothly();
-};
-
-const openCardForm = () => {
-  cardForm.classList.add('form_active');
-  openPopupSmoothly();
-};
-
-const submitCardForm = (evt) => {
-  evt.preventDefault();
-  cardsList.prepend(createCard(cardNameInput.value, cardLinkInput.value));
-  closePopupSmoothly();
-  cardNameInput.value = '';
-  cardLinkInput.value = '';
-};
-
+//функционал создания и рендеринга карточки
 const createCard = (name, link) => {
   const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
 
@@ -134,7 +82,7 @@ const createCard = (name, link) => {
     photoCaption.textContent = name;
     popupPhotoContainer.classList.add('popup__photo-container_active');
     popup.classList.add('popup_full-view');
-    openPopupSmoothly();
+    openPopup();
   }
 
   const likeButton = cardElement.querySelector('.button_like_empty');
@@ -158,8 +106,60 @@ const createCard = (name, link) => {
   return cardElement;
 };
 
-const renderCards = () => 
-  INITIAL_CARDS.map(card => cardsList.prepend(createCard(card.name, card.link)));
+const renderCard = card => cardsList.prepend(card);
+
+
+//функционал попапов и форм
+const openPopup = () => popup.classList.add('popup_opened');
+
+const closePopup = () => {
+  popup.classList.remove('popup_opened');
+  //проверяем, какая форма активна
+  forms.forEach(form => {
+    if (form.classList.contains('form_active')) {
+      form.classList.remove('form_active');
+    }
+  });
+  //и активно ли окно просмотра
+  if (popupPhotoContainer.classList.contains('popup__photo-container_active')) {
+    popupPhotoContainer.classList.remove('popup__photo-container_active');
+    popup.classList.remove('popup_full-view');
+  }
+  //проверка класса на плавное закрытие
+  if (popup.classList.contains('fade')) popup.classList.remove('fade');
+};
+
+const closePopupSmoothly = () => {
+  popup.classList.add('fade');
+  setTimeout(closePopup, 400);
+};
+
+const openProfileForm = () => {
+  profileForm.classList.add('form_active');
+  profileNameInput.value = profileName.textContent;
+  profileDescInput.value = profileDesc.textContent;
+  openPopup();
+};
+
+const submitProfileForm = (evt) => {
+  evt.preventDefault();
+  profileName.textContent = profileNameInput.value;
+  profileDesc.textContent = profileDescInput.value;
+  closePopupSmoothly();
+};
+
+const openCardForm = () => {
+  cardForm.classList.add('form_active');
+  openPopup();
+};
+
+const submitCardForm = (evt) => {
+  evt.preventDefault();
+  renderCard(createCard(cardNameInput.value, cardLinkInput.value));
+  closePopupSmoothly();
+  cardNameInput.value = '';
+  cardLinkInput.value = '';
+};
 
 profileEditButton.addEventListener('click', openProfileForm);
 profileAddButton.addEventListener('click', openCardForm);
@@ -167,4 +167,9 @@ popupCloseBtn.addEventListener('click', closePopupSmoothly);
 profileForm.addEventListener('submit', submitProfileForm);
 cardForm.addEventListener('submit', submitCardForm);
 
-renderCards()
+
+//отрисовка карточек "из коробки"
+const renderInitialCards = () => 
+   INITIAL_CARDS.forEach(card => renderCard(createCard(card.name, card.link)));
+
+renderInitialCards();

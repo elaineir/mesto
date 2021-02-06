@@ -29,7 +29,7 @@
         <button class="button button_add" aria-label="Добавить фото" type="button"></button>
       </section>
 
-      <section class="cards">
+      <section class="cards" aria-label="Галерея">
         <ul class="cards__list">
           <template class="template-card">
             <li class="card">
@@ -49,11 +49,11 @@
       <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
     </footer>
 
-    <article class="popup">
+    <article class="popup appear" aria-label="Всплывающее окно">
       <div class="popup__container">
         <button class="button button_close" aria-label="Закрыть" type="button"></button>
         
-        <div class="popup__form-container">
+        <section class="popup__form-container">
           <form class="form" name="profileForm">
             <h2 class="form__heading">Редактировать профиль</h2>
             <fieldset class="form__input-container">
@@ -73,9 +73,9 @@
             </fieldset>
             <button class="form__submit-btn" type="submit">Создать</button>
           </form>
-        </div>
+        </section>
         
-        <section class="popup__photo-container">
+        <section class="popup__photo-container" aria-label="Окно просмотра изображения">
           <figure class="photo">
             <img class="photo__pic" src="#" alt="#">
             <figcaption class="photo__caption"></figcaption>
