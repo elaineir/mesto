@@ -47,7 +47,6 @@ const popupCloseButtons = document.querySelectorAll('.button_close');
 
 
 //формы
-const form = document.querySelector('.form');
 const profileForm = document.querySelector('form[name="editProfileForm"]');
 const profileNameInput = profileForm.querySelector('.form__input_el_heading');
 const profileDescInput = profileForm.querySelector('.form__input_el_subheading');
