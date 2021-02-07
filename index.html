@@ -49,38 +49,43 @@
       <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
     </footer>
 
-    <article class="popup appear" aria-label="Всплывающее окно">
+    <article class="popup" id="editProfilePopup" aria-label="Редактировать профиль">
       <div class="popup__container">
         <button class="button button_close" aria-label="Закрыть" type="button"></button>
-        
-        <section class="popup__form-container">
-          <form class="form" name="profileForm">
-            <h2 class="form__heading">Редактировать профиль</h2>
-            <fieldset class="form__input-container">
-              <input class="form__input form__input_el_heading" type="text" name="heading">
-              <input class="form__input form__input_el_subheading" type="text" name="subheading">
-            </fieldset>
-            <button class="form__submit-btn" type="submit">Сохранить</button>
-          </form>
-  
-          <form class="form" name="addCardForm">
-            <h2 class="form__heading">Новое место</h2>
-            <fieldset class="form__input-container">
-              <input class="form__input form__input_el_image-caption" type="text" 
-                name="image-caption" placeholder="Название">
-              <input class="form__input form__input_el_image-link" type="text" 
-                name="image-link" placeholder="Ссылка на картинку">
-            </fieldset>
-            <button class="form__submit-btn" type="submit">Создать</button>
-          </form>
-        </section>
-        
-        <section class="popup__photo-container" aria-label="Окно просмотра изображения">
-          <figure class="photo">
-            <img class="photo__pic" src="#" alt="#">
-            <figcaption class="photo__caption"></figcaption>
-          </figure>
-        </section>
+        <form class="form" name="editProfileForm">
+          <h2 class="form__heading">Редактировать профиль</h2>
+          <fieldset class="form__input-container">
+            <input class="form__input form__input_el_heading" type="text" name="heading">
+            <input class="form__input form__input_el_subheading" type="text" name="subheading">
+          </fieldset>
+          <button class="form__submit-btn" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </article>
+
+    <article class="popup" id="addCardPopup" aria-label="Создать новое место">
+      <div class="popup__container">
+        <button class="button button_close" aria-label="Закрыть" type="button"></button>
+        <form class="form" name="addCardForm">
+          <h2 class="form__heading">Новое место</h2>
+          <fieldset class="form__input-container">
+            <input class="form__input form__input_el_image-caption" type="text" 
+              name="image-caption" placeholder="Название">
+            <input class="form__input form__input_el_image-link" type="text" 
+              name="image-link" placeholder="Ссылка на картинку">
+          </fieldset>
+          <button class="form__submit-btn" type="submit">Создать</button>
+        </form>
+      </div>
+    </article>
+
+    <article class="popup popup_black-overlay" id="showCardPopup" aria-label="Окно просмотра изображения">
+      <div class="popup__container">
+        <button class="button button_close" aria-label="Закрыть" type="button"></button>
+        <figure class="photo">
+          <img class="photo__pic" src="#" alt="#">
+          <figcaption class="photo__caption"></figcaption>
+        </figure>
       </div>
     </article>
   </div>
