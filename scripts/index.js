@@ -107,9 +107,9 @@ const renderCard = card => cardsList.prepend(card);
 
 
 //функционал попапов и форм
-const openPopup = (popup) => popup.classList.add('popup_opened');
+const openPopup = popup => popup.classList.add('popup_opened');
 
-const closePopup = (popup) => popup.classList.remove('popup_opened');
+const closePopup = popup => popup.classList.remove('popup_opened');
 
 const closePopupOnButton = (evt) => {
   const popup = evt.target.closest(".popup");
@@ -129,9 +129,7 @@ const submitProfileForm = (evt) => {
   closePopup(editProfilePopup);
 };
 
-const openCardForm = () => {
-  openPopup(addCardPopup);
-};
+const openCardForm = () => openPopup(addCardPopup);
 
 const submitCardForm = (evt) => {
   evt.preventDefault();
@@ -148,7 +146,4 @@ profileForm.addEventListener('submit', submitProfileForm);
 cardForm.addEventListener('submit', submitCardForm);
 
 //отрисовка карточек "из коробки"
-const renderInitialCards = () => 
-  INITIAL_CARDS.forEach(card => renderCard(createCard(card.name, card.link)));
-
-renderInitialCards();
+INITIAL_CARDS.forEach(card => renderCard(createCard(card.name, card.link)));
