@@ -4,9 +4,10 @@
   background-size: cover;
   width: 100%;
   padding-bottom: 100%;
-  border-radius: 10px 10px 0 0;
+  transition: transform .3s linear;
 }
 
 .card__preview:hover {
   cursor: pointer;
+  transform: scale(1.15);
 }
