@@ -122,8 +122,7 @@ const openProfileForm = () => {
   openPopup(editProfilePopup);
 };
 
-const submitProfileForm = (evt) => {
-  evt.preventDefault();
+const submitProfileForm = () => {
   profileName.textContent = profileNameInput.value;
   profileDesc.textContent = profileDescInput.value;
   closePopup(editProfilePopup);
@@ -131,8 +130,7 @@ const submitProfileForm = (evt) => {
 
 const openCardForm = () => openPopup(addCardPopup);
 
-const submitCardForm = (evt) => {
-  evt.preventDefault();
+const submitCardForm = () => {
   renderCard(createCard(cardNameInput.value, cardLinkInput.value));
   closePopup(addCardPopup);
   cardNameInput.value = '';

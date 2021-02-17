@@ -54,11 +54,15 @@
     <article class="popup" id="editProfilePopup" aria-label="Редактировать профиль">
       <div class="popup__container">
         <button class="button button_close" aria-label="Закрыть" type="button"></button>
-        <form class="form" name="editProfileForm">
+        <form class="form" name="editProfileForm" novalidate>
           <h2 class="form__heading">Редактировать профиль</h2>
           <fieldset class="form__input-container">
-            <input class="form__input form__input_el_heading" type="text" name="heading">
-            <input class="form__input form__input_el_subheading" type="text" name="subheading">
+            <input class="form__input form__input_el_heading" id="heading-input" type="text" 
+              name="heading" required minlength="2" maxlength="40">
+            <span class="form__error heading-input-error"></span>
+            <input class="form__input form__input_el_subheading" id="subheading-input" type="text" 
+              name="subheading" required minlength="2" maxlength="200">
+            <span class="form__error subheading-input-error"></span>
           </fieldset>
           <button class="form__submit-btn" type="submit">Сохранить</button>
         </form>
@@ -68,13 +72,15 @@
     <article class="popup" id="addCardPopup" aria-label="Создать новое место">
       <div class="popup__container">
         <button class="button button_close" aria-label="Закрыть" type="button"></button>
-        <form class="form" name="addCardForm">
+        <form class="form" name="addCardForm" novalidate>
           <h2 class="form__heading">Новое место</h2>
           <fieldset class="form__input-container">
-            <input class="form__input form__input_el_image-caption" type="text" 
-              name="image-caption" placeholder="Название">
-            <input class="form__input form__input_el_image-link" type="text" 
-              name="image-link" placeholder="Ссылка на картинку">
+            <input class="form__input form__input_el_image-caption" id="image-caption-input" type="text" 
+              name="image-caption" placeholder="Название" required minlength="2" maxlength="30">
+            <span class="form__error image-caption-input-error"></span>
+            <input class="form__input form__input_el_image-link" id="image-link-input" type="url" 
+              name="image-link" placeholder="Ссылка на картинку" required>
+            <span class="form__error image-link-input-error"></span>
           </fieldset>
           <button class="form__submit-btn" type="submit">Создать</button>
         </form>
@@ -92,5 +98,6 @@
     </article>
   </div>
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 </html>
