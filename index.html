@@ -39,7 +39,7 @@
               <button class="button button_delete" aria-label="Удалить изображение" type="button"></button>
               <div class="card__caption">
                 <h2 class="card__heading"></h2>
-                <button class="button button_like_empty" aria-label="Нравится" type="button"></button>
+                <button class="button button_like_default" aria-label="Нравится" type="button"></button>
               </div>
             </li>
           </template>
@@ -58,10 +58,10 @@
           <h2 class="form__heading">Редактировать профиль</h2>
           <fieldset class="form__input-container">
             <input class="form__input form__input_el_heading" id="heading-input" type="text" 
-              name="heading" minlength="2" maxlength="40" required>
+              name="heading" value="Жанна Барре" minlength="2" maxlength="40" required>
             <span class="form__error heading-input-error"></span>
             <input class="form__input form__input_el_subheading" id="subheading-input" type="text" 
-              name="subheading" minlength="2" maxlength="200" required>
+              name="subheading" value="Путешественница" minlength="2" maxlength="200" required>
             <span class="form__error subheading-input-error"></span>
           </fieldset>
           <button class="form__submit-btn" type="submit">Сохранить</button>
@@ -90,9 +90,9 @@
     <article class="popup popup_overlay_black" id="showCardPopup" aria-label="Окно просмотра изображения">
       <div class="popup__container">
         <button class="button button_close" aria-label="Закрыть" type="button"></button>
-        <figure class="photo">
-          <img class="photo__pic" src="#" alt="#">
-          <figcaption class="photo__caption"></figcaption>
+        <figure class="figure">
+          <img class="figure__image" src="#" alt="#">
+          <figcaption class="figure__caption"></figcaption>
         </figure>
       </div>
     </article>

@@ -11,7 +11,7 @@
 @import url(../blocks/button/_edit/button_edit.css);
 @import url(../blocks/button/_add/button_add.css);
 @import url(../blocks/button/_delete/button_delete.css);
-@import url(../blocks/button/_like/button_like_empty.css);
+@import url(../blocks/button/_like/button_like_default.css);
 @import url(../blocks/button/_like/button_like_liked.css);
 @import url(../blocks/button/_close/button_close.css);
 
@@ -51,6 +51,6 @@
 @import url(../blocks/form/__submit-btn/form__submit-btn.css);
 @import url(../blocks/form/__submit-btn/_disabled/form__submit-btn_disabled.css);
 
-@import url(../blocks/photo/photo.css);
-@import url(../blocks/photo/__pic/photo__pic.css);
-@import url(../blocks/photo/__caption/photo__caption.css);
+@import url(../blocks/figure/figure.css);
+@import url(../blocks/figure/__image/figure__image.css);
+@import url(../blocks/figure/__caption/figure__caption.css);
