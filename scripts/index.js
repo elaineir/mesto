@@ -40,6 +40,7 @@ const cardTemplate = document.querySelector('.template-card');
 
 
 //попапы
+const popupList = document.querySelectorAll('.popup');
 const editProfilePopup = document.querySelector('#editProfilePopup');
 const addCardPopup = document.querySelector('#addCardPopup');
 const showCardPopup = document.querySelector('#showCardPopup');
@@ -116,6 +117,18 @@ const closePopupOnButton = (evt) => {
   closePopup(popup);
 };
 
+const closePopupOnOverlay = (evt) => {
+  if (evt.target === evt.currentTarget) closePopup(evt.target);
+};
+
+const closePopupOnEsc = (evt) => {
+  if (evt.key === 'Escape') {
+    popupList.forEach(popup => {
+      if (popup.classList.contains('popup_opened')) closePopup(popup);
+    });
+  }
+};
+
 const openProfileForm = () => {
   profileNameInput.value = profileName.textContent;
   profileDescInput.value = profileDesc.textContent;
@@ -138,10 +151,12 @@ const submitCardForm = () => {
 };
 
 popupCloseButtons.forEach(button => button.addEventListener('click', closePopupOnButton));
+popupList.forEach(popup => popup.addEventListener('mousedown', closePopupOnOverlay));
 profileEditButton.addEventListener('click', openProfileForm);
 profileAddButton.addEventListener('click', openCardForm);
 profileForm.addEventListener('submit', submitProfileForm);
 cardForm.addEventListener('submit', submitCardForm);
+document.addEventListener('keydown', closePopupOnEsc);
 
 //отрисовка карточек "из коробки"
 INITIAL_CARDS.forEach(card => renderCard(createCard(card.name, card.link)));
