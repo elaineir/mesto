@@ -40,7 +40,7 @@ const cardTemplate = document.querySelector('.template-card');
 
 
 //попапы
-const popupList = document.querySelectorAll('.popup');
+const popups = document.querySelectorAll('.popup');
 const editProfilePopup = document.querySelector('#editProfilePopup');
 const addCardPopup = document.querySelector('#addCardPopup');
 const showCardPopup = document.querySelector('#showCardPopup');
@@ -108,9 +108,15 @@ const renderCard = card => cardsList.prepend(card);
 
 
 //функционал попапов и форм
-const openPopup = popup => popup.classList.add('popup_opened');
+const openPopup = popup => {
+  popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupOnEsc);
+};
 
-const closePopup = popup => popup.classList.remove('popup_opened');
+const closePopup = popup => {
+  popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupOnEsc);
+};
 
 const closePopupOnButton = (evt) => {
   const popup = evt.target.closest(".popup");
@@ -123,9 +129,8 @@ const closePopupOnOverlay = (evt) => {
 
 const closePopupOnEsc = (evt) => {
   if (evt.key === 'Escape') {
-    popupList.forEach(popup => {
-      if (popup.classList.contains('popup_opened')) closePopup(popup);
-    });
+    const popup = document.querySelector('.popup_opened');
+    closePopup(popup);
   }
 };
 
@@ -151,12 +156,11 @@ const submitCardForm = () => {
 };
 
 popupCloseButtons.forEach(button => button.addEventListener('click', closePopupOnButton));
-popupList.forEach(popup => popup.addEventListener('mousedown', closePopupOnOverlay));
+popups.forEach(popup => popup.addEventListener('mousedown', closePopupOnOverlay));
 profileEditButton.addEventListener('click', openProfileForm);
 profileAddButton.addEventListener('click', openCardForm);
 profileForm.addEventListener('submit', submitProfileForm);
 cardForm.addEventListener('submit', submitCardForm);
-document.addEventListener('keydown', closePopupOnEsc);
 
 //отрисовка карточек "из коробки"
 INITIAL_CARDS.forEach(card => renderCard(createCard(card.name, card.link)));
