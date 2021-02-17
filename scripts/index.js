@@ -55,7 +55,7 @@ const profileDescInput = profileForm.elements.subheading;
 const cardForm = document.forms.addCardForm;
 const cardNameInput = cardForm.elements.imageCaption;
 const cardLinkInput = cardForm.elements.imageLink;
-
+const cardFormSubmitButton = cardForm.querySelector('#cardFormSubmitBtn');
 
 //функционал попапов
 const openPopup = popup => {
@@ -88,11 +88,9 @@ const closePopupOnEsc = evt => {
 //функционал создания и рендеринга карточки
 const createCard = (name, link) => {
   const cardElement = cardTemplate.content.cloneNode(true);
-
   cardElement.querySelector('.card__heading').textContent = name;
   const cardPreview = cardElement.querySelector('.card__preview');
   cardPreview.style.backgroundImage = `url(${link})`;
-
   return cardElement;
 };
 
@@ -112,12 +110,13 @@ const submitProfileForm = () => {
   closePopup(editProfilePopup);
 };
 
-const openCardForm = () => openPopup(addCardPopup);
+const openCardForm = () => openPopup(addCardPopup); 
 
 const submitCardForm = () => {
   renderCard(createCard(cardNameInput.value, cardLinkInput.value));
   closePopup(addCardPopup);
   cardForm.reset();
+  cardFormSubmitButton.classList.add('form__submit-btn_disabled');
 };
 
 
