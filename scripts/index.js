@@ -28,16 +28,14 @@ const INITIAL_CARDS = [
 ];
 
 //профиль
-const profileEditButton = document.querySelector('.button_edit');
-const profileAddButton = document.querySelector('.button_add');
 const profileName = document.querySelector('.profile__name');
 const profileDesc = document.querySelector('.profile__description');
-
+const profileEditButton = document.querySelector('.button_edit');
+const profileAddButton = document.querySelector('.button_add');
 
 //карточки
 const cardsList = document.querySelector('.cards__list');
-const cardTemplate = document.querySelector('.template-card');
-
+const cardTemplate = cardsList.querySelector('.template-card');
 
 //попапы
 const popups = document.querySelectorAll('.popup');
@@ -46,19 +44,17 @@ const addCardPopup = document.querySelector('#addCardPopup');
 const showCardPopup = document.querySelector('#showCardPopup');
 const popupCloseButtons = document.querySelectorAll('.button_close');
 
+//окно просмотра фото
+const photoPic = showCardPopup.querySelector('.photo__pic');
+const photoCaption = showCardPopup.querySelector('.photo__caption');
 
 //формы
-const profileForm = document.querySelector('form[name="editProfileForm"]');
-const profileNameInput = profileForm.querySelector('.form__input_el_heading');
-const profileDescInput = profileForm.querySelector('.form__input_el_subheading');
-const cardForm = document.querySelector('form[name="addCardForm"]');
-const cardNameInput = cardForm.querySelector('.form__input_el_image-caption');
-const cardLinkInput = cardForm.querySelector('.form__input_el_image-link');
-
-
-//окно просмотра фото
-const photoPic = document.querySelector('.photo__pic');
-const photoCaption = document.querySelector('.photo__caption');
+const profileForm = document.forms.editProfileForm;
+const profileNameInput = profileForm.elements.heading;
+const profileDescInput = profileForm.elements.subheading;
+const cardForm = document.forms.addCardForm;
+const cardNameInput = cardForm.elements.imageCaption;
+const cardLinkInput = cardForm.elements.imageLink;
 
 
 //функционал создания и рендеринга карточки
@@ -151,12 +147,11 @@ const openCardForm = () => openPopup(addCardPopup);
 const submitCardForm = () => {
   renderCard(createCard(cardNameInput.value, cardLinkInput.value));
   closePopup(addCardPopup);
-  cardNameInput.value = '';
-  cardLinkInput.value = '';
+  cardForm.reset();
 };
 
-popupCloseButtons.forEach(button => button.addEventListener('click', closePopupOnButton));
 popups.forEach(popup => popup.addEventListener('mousedown', closePopupOnOverlay));
+popupCloseButtons.forEach(button => button.addEventListener('click', closePopupOnButton));
 profileEditButton.addEventListener('click', openProfileForm);
 profileAddButton.addEventListener('click', openCardForm);
 profileForm.addEventListener('submit', submitProfileForm);
