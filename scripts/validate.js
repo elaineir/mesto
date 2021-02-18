@@ -50,8 +50,10 @@ const enableValidation = ({ formSelector, inputSelector, submitButtonSelector,
   function toggleButtonState(inputList, buttonElem) {
     if (hasInvalidInput(inputList)) {
       buttonElem.classList.add(inactiveButtonClass);
+      buttonElem.disabled = true;
     } else {
       buttonElem.classList.remove(inactiveButtonClass);
+      buttonElem.disabled = false;
     }
   }
 };
