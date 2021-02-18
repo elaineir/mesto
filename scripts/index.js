@@ -103,15 +103,9 @@ const createCard = (name, link) => {
 const renderCard = card => cardsList.prepend(card);
 
 //обработчики лайка, удаления и окна просмотра
-const handleLike = (evt) => evt.target.classList.toggle('button_like_liked');
+const handleLike = evt => evt.target.classList.toggle('button_like_liked');
 
-const handleDelete = (evt) => {
-  const currentCard = evt.target.closest('.card');
-  currentCard.remove();
-  currentCard.querySelector('.button_like_default').removeEventListener('click', handleLike);
-  currentCard.querySelector('.button_delete').removeEventListener('click', handleDelete);
-  currentCard.querySelector('.card__preview').removeEventListener('click', (evt) => handleFullView(evt, name, link));
-};
+const handleDelete = evt => evt.target.closest('.card').remove();
 
 const handleFullView = (evt, name, link) => {
   //убрать стандартное событие ссылки
