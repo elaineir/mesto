@@ -110,7 +110,7 @@ const handleDelete = (evt) => {
   currentCard.remove();
   currentCard.querySelector('.button_like_default').removeEventListener('click', handleLike);
   currentCard.querySelector('.button_delete').removeEventListener('click', handleDelete);
-  currentCard.querySelector('.card__preview').removeEventListener('click', handleFullView);
+  currentCard.querySelector('.card__preview').removeEventListener('click', (evt) => handleFullView(evt, name, link));
 };
 
 const handleFullView = (evt, name, link) => {
