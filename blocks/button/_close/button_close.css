@@ -4,15 +4,15 @@
   position: absolute;
   width: 40px;
   height: 40px;
-  top: -20px;
-  right: -20px;
+  top: -40px;
+  right: -40px;
 }
 
 @media screen and (max-width: 635px) {
   .button_close {
     width: 26px;
     height: 26px;
-    top: -23px;
+    top: -24px;
     right: 13px;
   }
 }
