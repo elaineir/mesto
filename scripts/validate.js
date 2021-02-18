@@ -44,7 +44,7 @@ const enableValidation = ({ formSelector, inputSelector, submitButtonSelector,
   }
 
   function hasInvalidInput(inputList) {
-    return inputList.some(inputElem => !inputElem.validity.valid)
+    return inputList.some(inputElem => !inputElem.validity.valid);
   }
   
   function toggleButtonState(inputList, buttonElem) {
@@ -54,7 +54,7 @@ const enableValidation = ({ formSelector, inputSelector, submitButtonSelector,
       buttonElem.classList.remove(inactiveButtonClass);
     }
   }
-}
+};
 
 enableValidation({
   formSelector: '.form',

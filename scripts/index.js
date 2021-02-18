@@ -127,13 +127,15 @@ profileAddButton.addEventListener('click', openCardForm);
 profileForm.addEventListener('submit', submitProfileForm);
 cardForm.addEventListener('submit', submitCardForm);
 
-
-//делегирование функционала карточек с родителя (списка)
+//делегирование функционала карточек родителю (списку)
+//лайк
 cardsList.addEventListener('click', (evt) => {
-  if (evt.target.classList.contains('button_like_default'))
+  if (evt.target.classList.contains('button_like_default')) {
     evt.target.classList.toggle('button_like_liked');
+  }
 });
 
+//удалить карточку
 cardsList.addEventListener('click', (evt) => {
   if (evt.target.classList.contains('button_delete')) {
     const cardItem = evt.target.closest('.card');
@@ -141,13 +143,14 @@ cardsList.addEventListener('click', (evt) => {
   }
 });
 
+//открыть полноразмерное изображение
 cardsList.addEventListener('click', (evt) => {
   if (evt.target.classList.contains('card__preview')) {
-    //убираем стандартное событие ссылки
+    //убрать стандартное событие ссылки
     //чтобы окно просмотра не скроллило страницу наверх
     evt.preventDefault();
     evt.target.getAttribute('href').replace('');
-    //наполнение попапа с фото
+    //наполнить попап с фото
     const cardItem = evt.target.closest('.card');
     const cardCaption = cardItem.querySelector('.card__heading');
     photoFull.src = evt.target.style.backgroundImage.slice(5, -2);
@@ -158,5 +161,5 @@ cardsList.addEventListener('click', (evt) => {
 });
 
 
-//отрисовка карточек "из коробки"
+//отрисовать карточки "из коробки"
 INITIAL_CARDS.forEach(card => renderCard(createCard(card.name, card.link)));
