@@ -33,7 +33,6 @@ const INITIAL_CARDS = [
 ];
 
 const VALIDATION_SETTINGS = {
-  formSelector: '.form',
   inputSelector: '.form__input',
   submitButtonSelector: '.form__submit-btn',
   inactiveButtonClass: 'form__submit-btn_disabled',
@@ -62,7 +61,7 @@ const photoFull = showCardPopup.querySelector('.figure__image');
 const photoCaption = showCardPopup.querySelector('.figure__caption');
 
 //формы
-const forms = document.querySelectorAll('form');
+const forms = document.querySelectorAll('.form');
 const profileForm = document.forms.editProfileForm;
 const profileNameInput = profileForm.elements.heading;
 const profileDescInput = profileForm.elements.subheading;
@@ -149,10 +148,10 @@ profileForm.addEventListener('submit', submitProfileForm);
 cardForm.addEventListener('submit', submitCardForm);
 
 //отрисовать карточки "из коробки"
-INITIAL_CARDS.forEach((card) => renderCard(createCard(card)));
+INITIAL_CARDS.forEach((card) => renderCard(createCard(card))); 
 
 //инициализировать валидацию
 forms.forEach((form) => {
-  const formValidator = new FormValidator(VALIDATION_SETTINGS, form);
-  formValidator.enableValidation();
+const formValidator = new FormValidator(VALIDATION_SETTINGS, form);
+formValidator.enableValidation();
 });

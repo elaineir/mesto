@@ -1,6 +1,6 @@
 import { handleCardPopup } from './index.js';
 
-class Card {
+export default class Card {
   constructor(data, cardSelector) {
     this._name = data.name;
     this._link = data.link;
@@ -11,7 +11,6 @@ class Card {
     const cardElement = document
       .querySelector(this._cardSelector)
       .content
-      .querySelector('.card')
       .cloneNode(true);
 
     return cardElement;
@@ -32,9 +31,7 @@ class Card {
     this._card = evt.target.closest('.card');
     this._card.querySelector('.card__preview').getAttribute('href').replace('');
     //наполнить окно просмотра
-    const nameSource = this._name;
-    const linkSource = this._link;
-    handleCardPopup(nameSource, linkSource);
+    handleCardPopup(this._name, this._link);
   }
 
   _setEventListeners() {
@@ -61,5 +58,3 @@ class Card {
     return this._card;
   }
 }
-
-export default Card;
