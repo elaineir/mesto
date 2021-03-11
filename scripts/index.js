@@ -3,7 +3,7 @@
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 
-export { fillCardPopup, openPopup, showCardPopup };
+export { handleCardPopup };
 
 const INITIAL_CARDS = [
   {
@@ -98,10 +98,11 @@ const closePopupOnEsc = (evt) => {
   }
 };
 
-const fillCardPopup = (name, link) => {
+const handleCardPopup = (name, link) => {
   photoFull.alt = name;
   photoCaption.textContent = name;
   photoFull.src = link;
+  openPopup(showCardPopup);
 };
 
 //функционал форм

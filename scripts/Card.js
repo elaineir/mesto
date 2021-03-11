@@ -1,4 +1,4 @@
-import { fillCardPopup, openPopup, showCardPopup } from './index.js';
+import { handleCardPopup } from './index.js';
 
 class Card {
   constructor(data, cardSelector) {
@@ -34,8 +34,7 @@ class Card {
     //наполнить окно просмотра
     const nameSource = this._name;
     const linkSource = this._link;
-    fillCardPopup(nameSource, linkSource);
-    openPopup(showCardPopup);
+    handleCardPopup(nameSource, linkSource);
   }
 
   _setEventListeners() {
