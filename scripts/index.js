@@ -152,6 +152,6 @@ INITIAL_CARDS.forEach((card) => renderCard(createCard(card)));
 
 //инициализировать валидацию
 forms.forEach((form) => {
-const formValidator = new FormValidator(VALIDATION_SETTINGS, form);
-formValidator.enableValidation();
+  const formValidator = new FormValidator(VALIDATION_SETTINGS, form);
+  formValidator.enableValidation();
 });
