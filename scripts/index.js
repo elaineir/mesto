@@ -1,44 +1,10 @@
 'use strict';
 
+import { INITIAL_CARDS, VALIDATION_SETTINGS } from './constants.js'
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 
 export { handleCardPopup };
-
-const INITIAL_CARDS = [
-  {
-    name: 'Парк Монрепо, Выборг, Россия',
-    link: 'https://live.staticflickr.com/65535/50913703638_b4fcd03bfe_o.jpg'
-  },
-  {
-    name: 'Республика Коми, Россия',
-    link: 'https://live.staticflickr.com/65535/50914523672_b12464bd19_o.jpg'
-  },
-  {
-    name: 'Тулиновка, Россия',
-    link: 'https://live.staticflickr.com/65535/50914523872_6806f86d99_o.jpg'
-  },
-  {
-    name: 'Камчатка, Россия',
-    link: 'https://live.staticflickr.com/65535/50914393181_baa1575e2f_o.jpg'
-  },
-  {
-    name: 'Байкал, Россия',
-    link: 'https://live.staticflickr.com/65535/50914524227_75cd43e7e4_o.jpg'
-  },
-  {
-    name: 'Херсонес, Крым, Россия',
-    link: 'https://live.staticflickr.com/65535/50913704173_3d77ca98db_o.jpg'
-  }
-];
-
-const VALIDATION_SETTINGS = {
-  inputSelector: '.form__input',
-  submitButtonSelector: '.form__submit-btn',
-  inactiveButtonClass: 'form__submit-btn_disabled',
-  inputErrorClass: 'form__input_type_error',
-  errorClass: 'form__error_visible'
-};
 
 //профиль
 const profileName = document.querySelector('.profile__name');
@@ -61,7 +27,6 @@ const photoFull = showCardPopup.querySelector('.figure__image');
 const photoCaption = showCardPopup.querySelector('.figure__caption');
 
 //формы
-const forms = document.querySelectorAll('.form');
 const profileForm = document.forms.editProfileForm;
 const profileNameInput = profileForm.elements.heading;
 const profileDescInput = profileForm.elements.subheading;
@@ -151,7 +116,8 @@ cardForm.addEventListener('submit', submitCardForm);
 INITIAL_CARDS.forEach((card) => renderCard(createCard(card))); 
 
 //инициализировать валидацию
-forms.forEach((form) => {
-  const formValidator = new FormValidator(VALIDATION_SETTINGS, form);
-  formValidator.enableValidation();
-});
+const profileFormValidator = new FormValidator(VALIDATION_SETTINGS, profileForm);
+profileFormValidator.enableValidation();
+
+const cardFormValidator = new FormValidator(VALIDATION_SETTINGS, cardForm);
+cardFormValidator.enableValidation();
